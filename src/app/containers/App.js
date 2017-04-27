@@ -7,9 +7,11 @@ import * as TodoActions from '../actions/index';
 
 class App extends Component {
   render() {
-    const {todos, actions} = this.props;
+    const {todos, actions, users} = this.props;
+    console.log(todos);
+    console.log(users);
     return (
-      <div>
+      <div className="todoapp">
         <Header
           addTodo={actions.addTodo}
           />
@@ -24,12 +26,14 @@ class App extends Component {
 
 App.propTypes = {
   todos: PropTypes.array.isRequired,
+  users: PropTypes.array.isRequired,
   actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
   return {
-    todos: state.todos
+    todos: state.todos,
+    users: state.users
   };
 }
 

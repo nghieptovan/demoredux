@@ -1,22 +1,19 @@
 {
   "presets": [
+    "es2015",
     "react",
-    "es2015"
+    "stage-1"
   ],
   "env": {
-    "test": {
-      "plugins": [
-        "istanbul"
+    "development": {
+      "presets": [
+        "react-hmre"
       ]
     },
     "production": {
-      "presets": [
-        [
-          "es2015",
-          {
-            "modules": false
-          }
-        ]
+      "plugins": [
+        "transform-react-constant-elements",
+        "transform-react-remove-prop-types"
       ]
     }
   }
