@@ -36,7 +36,8 @@ module.exports = {
           'react-hot-loader',
           'babel-loader'
         ]
-      }
+      },
+      {test: /\.(jpe?g|png|gif)$/i, loader: 'file?name=[name].[ext]'}
     ]
   },
   plugins: [
